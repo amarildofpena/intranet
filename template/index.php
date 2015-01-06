@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <?php
-    header('Content-Type:text/html; charset=UTF-8');
-  ?>
-    <title>Intranet GrupoMob</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <Title>Intranet GrupoMob</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- css -->
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link href="css/style.css" rel="stylesheet" media="screen">
@@ -17,21 +12,12 @@
 	<script src="js/modernizr.custom.js"></script>
     <?php
     
-		session_start();
-
-		//$_SESSION['empresa'] =  
-		//$_SESSION['usuario'] = 
 		include 'config.php';
 		include 'funcoes.php';
-		
 		
 	?>
       </head>
   <body>
-  	
-
-	  <!-- intro area -->	  
-	 
        <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
        <div class="modal-dialog">
        <div class="modal-content">
@@ -74,7 +60,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Empresa</a>
+      <a class="navbar-brand" href="#">GRUPOMOB</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -84,7 +70,7 @@
         <li><a href="#tickets">Tickets</a></li>
         <li><a href="#infomob">Infomob</a></li>
         <li><a href="#emails">Emails</a></li>
-        <li><a href="#feed">NotÃ­cias</a></li>
+        <li><a href="#feed">Notícias</a></li>
 
       
       </ul>
@@ -92,14 +78,16 @@
       <ul class="nav navbar-nav navbar-right">
       
       
-          <li><a href="#">UsuÃ¡rio: </a></li>
+          <li><a href="#">Usuário: </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Logar</a></li>
             <li style="visibility: hidden"><a href="#">Fazer Logoff</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Cadastro de Notícia</a></li>
+            <li><a href="#">Cadastro de Infomob</a></li>
+            <li><a href="#">Cadastro de Cardápio</a></li>
           </ul>
         </li>
       </ul>
@@ -145,22 +133,9 @@
 	  </section>
       
 
-	  
-      
-      	  <!-- INFOMOB -->
-          
          <?php
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$dbname = "intranet";
-		// Create connection
-		$conn = new mysqli($servername, $username, $password, $dbname);
-		// Check connection
-		if ($conn->connect_error) {
-			 die("Connection failed: " . $conn->connect_error);
-		} 
-		
+                include 'config.php';
+	
 		$sql = "SELECT TITULO,CONTEUDO,AUTOR,DATE_FORMAT(data_infomob,'%d/%m/%Y') AS DATA_INFOMOB FROM infomob";
 		$result = $conn->query($sql);
 		
@@ -179,7 +154,7 @@
         
               
    	  <section id="infomob" class="col-md-offset-2 col-md-8"  >
-     <img alt="" src="img/header.jpg" style="width:100%" >	
+                <img alt="" src="img/header.jpg" style="width:100%" >	
      
             <div>
             	<div class="row">
@@ -241,7 +216,7 @@
         <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                              <h2>Noticias</h2>
                              
-                             <p> Ãšltimas notÃ­cias da MOB! </p>
+                             <p> Últimas notícias EMPRESA! </p>
                              <br/>
                              <br/>
                             </div>
@@ -319,142 +294,36 @@
 	</section>
 	
 	 
-	<section id="works" class="home-section bg-gray">
+	<section id="cardápio" class="home-section bg-white">
 			<div class="container">
 			  <div class="row">
 				  <div class="col-md-offset-2 col-md-8">
 					<div class="section-heading">
-					 <h2>Works</h2>
-					 <p>Dicunt tamquam dissentiet vix ex, ne mei dico reformidans, accumsan gloriatur necessitatibus eu sit.</p>
+					 <h2>Cardápio</h2>
+					 <p>Segue o Cardápio da semana servido no refeitório do  GrupoMOB de segunda a sexta a partir das 11:30h.</p>
+                                         <?php
+                                                    $semana = date('w');
+                                                    switch ($semana) {
+
+                                                    case 0: $semana = "DOMINGO"; break;
+                                                    case 1: $semana = "SEGUNDA FEIRA"; break;
+                                                    case 2: $semana = "TERÇA-FEIRA"; break;
+                                                    case 3: $semana = "QUARTA-FEIRA"; break;
+                                                    case 4: $semana = "QUINTA-FEIRA"; break;
+                                                    case 5: $semana = "SEXTA-FEIRA"; break;
+                                                    case 6: $semana = "SÁBADO"; break;
+
+                                                    }
+                                                    
+                                                    echo $semana;
+                                         ?>
 					</div>
 				  </div>
 			  </div>
 				<div class="row">
 					<div class="col-md-offset-2 col-md-8">
 					
-					<ul class="lb-album">
-						<li>
-							<a href="#image-1">
-								<img src="img/works/thumbs/1.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-1">
-								<a href="#page" class="lb-close">X</a>
-								<img src="img/works/1.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-2">
-								<img src="img/works/thumbs/2.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-2">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/2.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-3">
-								<img src="img/works/thumbs/3.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-3">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/3.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-4">
-								<img src="img/works/thumbs/4.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-4">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/4.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						
-						<li>
-							<a href="#image-5">
-								<img src="img/works/thumbs/5.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-5">
-								<a href="#page" class="lb-close">X</a>
-								<img src="img/works/5.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-6">
-								<img src="img/works/thumbs/6.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-6">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/6.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-7">
-								<img src="img/works/thumbs/7.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-7">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/7.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-						<li>
-							<a href="#image-8">
-								<img src="img/works/thumbs/8.jpg" alt="">
-								<span>+</span>
-							</a>
-							<div class="lb-overlay" id="image-8">
-								<a href="#page" class="lb-close">x Close</a>
-								<img src="img/works/8.jpg" alt="" />
-								<div>
-									<h3>Sleek <span>/Design/</h3>
-									<p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
-								</div>
-								
-							</div>
-						</li>
-					</ul>
+					
 					
 					</div>
 				</div>
@@ -467,8 +336,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="color-light">
-						<h2 class="wow bounceInDown" data-wow-delay="1s">Details are the key for perfection</h2>
-						<p class="lead wow bounceInUp" data-wow-delay="2s">We mix all detailed things together</p>	
+						<h2 class="wow bounceInDown">Detalhes são a chave para a perfeição</h2>
+						<p class="lead wow bounceInUp">Nós misturamos todos os detalhes juntos!</p>	
 						</div>
 					</div>				
 				</div>
