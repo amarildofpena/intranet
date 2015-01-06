@@ -18,14 +18,9 @@
     <?php
     
 		session_start();
-<<<<<<< HEAD
-		$_SESSION['empresa'] =  
-		$_SESSION['usuario'] = 
-=======
+
 		//$_SESSION['empresa'] =  
 		//$_SESSION['usuario'] = 
->>>>>>> origin/master
-
 		include 'config.php';
 		include 'funcoes.php';
 		
@@ -37,15 +32,15 @@
 
 	  <!-- intro area -->	  
 	 
-     <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
+       <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+       <div class="modal-dialog">
+       <div class="modal-content">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
           <h1 class="text-center">Login</h1>
       </div>
       <div class="modal-body">
-          <form class="form col-md-12 center-block">
+          <form class="form col-md-12 center-block" method="post" action="autenticaUsuario.php">
             <div class="form-group">
               <input type="text" class="form-control input-lg" placeholder="Email" name="email">
             </div>
@@ -53,8 +48,8 @@
               <input type="password" class="form-control input-lg" placeholder="Password" name="senha">
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block">Entrar</button>
-              <span class="pull-center"><a href="#">Cadastrar</a></span>
+                <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+              <span class="pull-center"><a href="cadastroUsuario.php">Cadastrar</a></span>
             </div>
           </form>
       </div>
@@ -89,7 +84,7 @@
         <li><a href="#tickets">Tickets</a></li>
         <li><a href="#infomob">Infomob</a></li>
         <li><a href="#emails">Emails</a></li>
-        <li><a href="#feed">Not�cias</a></li>
+        <li><a href="#feed">Notícias</a></li>
 
       
       </ul>
@@ -97,12 +92,12 @@
       <ul class="nav navbar-nav navbar-right">
       
       
-          <li><a href="#">Usu�rio: </a></li>
+          <li><a href="#">Usuário: </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Logar</a></li>
-            <li><a href="#">Fazer Logoff</a></li>
+            <li style="visibility: hidden"><a href="#">Fazer Logoff</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
@@ -199,7 +194,7 @@
                 <BR/>
                 <BR/>
                 <div class="row">
-				<BR/>
+		<BR/>
                 <BR/>
                 <BR/>
                 <BR/>
@@ -246,7 +241,7 @@
         <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                              <h2>Noticias</h2>
                              
-                             <p> �ltimas not�cias da MOB! </p>
+                             <p> Últimas notícias da MOB! </p>
                              <br/>
                              <br/>
                             </div>
@@ -323,7 +318,7 @@
 		</div>
 	</section>
 	
-	 <!-- Works -->
+	 
 	<section id="works" class="home-section bg-gray">
 			<div class="container">
 			  <div class="row">
@@ -465,7 +460,7 @@
 				</div>
 			</div>
 		</section>	  
-	
+
 		<!-- spacer 2 -->	  
 		<section id="spacer2" class="home-section spacer">	
            <div class="container">
@@ -481,86 +476,7 @@
 		</section>	
 	  
 	 <!-- Contact -->
-	  <section id="contact" class="home-section bg-white">
-	  	<div class="container">
-			  <div class="row">
-				  <div class="col-md-offset-2 col-md-8">
-					<div class="section-heading">
-					 <h2>Contact us</h2>
-					 <p>Contact via form below and we will be get in touch with you within 24 hours. </p>
-					</div>
-				  </div>
-			  </div>
-
-	  		<div class="row">
-	  			<div class="col-md-offset-1 col-md-10">
-
-				<form class="form-horizontal" role="form">
-				  <div class="form-group">
-					<div class="col-md-offset-2 col-md-8">
-					  <input type="text" class="form-control" id="inputName" placeholder="Name">
-					</div>
-				  </div>
-				  <div class="form-group">
-					<div class="col-md-offset-2 col-md-8">
-					  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-					</div>
-				  </div>
-				  <div class="form-group">
-					<div class="col-md-offset-2 col-md-8">
-					  <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
-					</div>
-				  </div>
-				  <div class="form-group">
-					<div class="col-md-offset-2 col-md-8">
-					  <textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
-					</div>
-				  </div>
-				  <div class="form-group">
-					<div class="col-md-offset-2 col-md-8">
-					 <button type="button" class="btn btn-theme btn-lg btn-block">Send message</button>
-					</div>
-				  </div>
-				</form>
-	
-	  			</div>
-			
-				
-	  		</div>
-			<div class="row mar-top30 ">
-				<div class="col-md-offset-2 col-md-8">
-					<h5>We're on social networks</h5>
-					<ul class="social-network">
-						<li><a href="#">
-						<span class="fa-stack fa-2x">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-						</span></a>
-						</li>
-						<li><a href="#">
-						<span class="fa-stack fa-2x">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
-						</span></a>
-						</li>
-						<li><a href="#">
-						<span class="fa-stack fa-2x">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-						</span></a>
-						</li>
-						<li><a href="#">
-						<span class="fa-stack fa-2x">
-							<i class="fa fa-circle fa-stack-2x"></i>
-							<i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
-						</span></a>
-						</li>
-					</ul>
-				</div>				
-			</div>
-
-	  	</div>
-	  </section>  
+	 
 
 	<footer>
 		<div class="container">
@@ -571,6 +487,7 @@
 			</div>		
 		</div>	
 	</footer>
+  
 	 
 	 <!-- js -->
     <script src="js/jquery.js"></script>
