@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-  
+  <?php
+    header('Content-Type:text/html; charset=UTF-8');
+  ?>
     <title>Intranet GrupoMob</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -16,8 +18,13 @@
     <?php
     
 		session_start();
+<<<<<<< HEAD
 		$_SESSION['empresa'] =  
 		$_SESSION['usuario'] = 
+=======
+		//$_SESSION['empresa'] =  
+		//$_SESSION['usuario'] = 
+>>>>>>> origin/master
 
 		include 'config.php';
 		include 'funcoes.php';
