@@ -1,14 +1,11 @@
-<?php
-		session_start();
-		$_SESSION['empresa'] =  
-		$_SESSION['usuario'] = 
-?>
 <!DOCTYPE html>
 <html>
   <head>
-  
+  <?php
+    header('Content-Type:text/html; charset=UTF-8');
+  ?>
     <title>Intranet GrupoMob</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,6 +16,11 @@
     <script src="http://static.scripting.com/github/bootstrap2/js/bootstrap-transition.js"></script>
 	<script src="js/modernizr.custom.js"></script>
     <?php
+    
+		session_start();
+		//$_SESSION['empresa'] =  
+		//$_SESSION['usuario'] = 
+
 		include 'config.php';
 		include 'funcoes.php';
 		
@@ -34,7 +36,7 @@
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">ï¿½</button>
           <h1 class="text-center">Login</h1>
       </div>
       <div class="modal-body">
@@ -82,7 +84,7 @@
         <li><a href="#tickets">Tickets</a></li>
         <li><a href="#infomob">Infomob</a></li>
         <li><a href="#emails">Emails</a></li>
-        <li><a href="#feed">Notícias</a></li>
+        <li><a href="#feed">Notï¿½cias</a></li>
 
       
       </ul>
@@ -90,7 +92,7 @@
       <ul class="nav navbar-nav navbar-right">
       
       
-          <li><a href="#">Usuário: </a></li>
+          <li><a href="#">Usuï¿½rio: </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -239,7 +241,7 @@
         <div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                              <h2>Noticias</h2>
                              
-                             <p> Últimas notícias da MOB! </p>
+                             <p> ï¿½ltimas notï¿½cias da MOB! </p>
                              <br/>
                              <br/>
                             </div>
@@ -276,7 +278,7 @@
 					</div>
 				  </div>
 			  </div>
-			  <div class="row" style="align=center">
+			  <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 					<div class="service-box wow bounceInDown" data-wow-delay="0.1s">
 						<a href="http://mail.mobinteligencia.com.br"><i class="fa fa-mail-reply-all fa-4x"></i>
