@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <button class="btn btn-primary btn-lg btn-block">Entrar</button>
-              <span class="pull-center"><a href="cadastroUsuario.php">Cadastrar</a></span>
+                <span class="pull-center"><a href="Cadastros/CadastroUsuario.php">Cadastrar</a></span>
             </div>
           </form>
       </div>
@@ -83,11 +83,11 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-chevron-down"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#" data-toggle="modal" data-target="#loginModal">Logar</a></li>
-            <li style="visibility: hidden"><a href="#">Fazer Logoff</a></li>
+            <li ><a href="#">Fazer Logoff</a></li>
             <li class="divider"></li>
-            <li><a href="#">Cadastro de Notícia</a></li>
-            <li><a href="#">Cadastro de Infomob</a></li>
-            <li><a href="#">Cadastro de Cardápio</a></li>
+            <li><a href="Cadastros/CadastroNoticia.php">Cadastro de Notícia</a></li>
+            <li><a href="Cadastros/CadastroInfo.php">Cadastro de Infomob</a></li>
+            <li><a href="Cadastros/CadastroCardapio.php">Cadastro de Cardápio</a></li>
           </ul>
         </li>
       </ul>
